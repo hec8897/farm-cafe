@@ -1,15 +1,16 @@
 <template>
     <modal 
-        name="my-first-modal"
+        name="login-modal"
         :adaptive="true"
         width="90%"
         :minHeight="400"
         :maxWidth="600"
+        :focusTrap="true"
     >
     <div class='inner left'>
         <h2>우성 팜카페 로그인</h2>
         <input placeholder='사용자 코드(아이디)를 입력하세요'/>
-        <input placeholder='비밀번호를 입력하세요'/>
+        <input placeholder='비밀번호를 입력하세요' type='password'/>
         <div class='btns'>
             <div class='btn'>우성 로그인</div>
             <div class='btn green'>네이버 로그인</div>
@@ -26,14 +27,6 @@
     </modal>
 </template>
 
-<script>
-export default {
-  
-    mount () {
-        this.show()
-    }
-}
-</script>
 
 <style lang="scss">
 div.inner{

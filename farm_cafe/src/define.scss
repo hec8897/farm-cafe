@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=Roboto:wght@100;400;700&display=swap');
 
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -61,6 +60,7 @@ input {
             appearance: none;
     &::placeholder{
         color: #666;
+        font-size: 0.875rem;
     }
 }
 
@@ -84,7 +84,7 @@ html,body{
     font-family: 'Noto Sans KR','Roboto', sans-serif;
     font-size: 18px;
     margin: 0;
-    color:#444;
+    color:#222;
 }
 .pointer{
     cursor: pointer;
@@ -92,6 +92,14 @@ html,body{
     &:hover{
         color: $red;
     }
+}
+.t_blue{
+    color: skyblue;
+
+}
+.t_red{
+    color: Tomato;
+
 }
 
 .btn{
