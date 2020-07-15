@@ -9,9 +9,11 @@
 
     - express --view=pug server
     - cd server
-    - npm i123
+    - npm i
 ```
 
 ### client
 ```
+1. npm install vue
 2. npm install -g @vue/cli
+3. npm install babel-polyfill
