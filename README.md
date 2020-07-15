@@ -9,7 +9,7 @@
 
     - express --view=pug server
     - cd server
-    - npm i
+    - npm i123
 ```
 
 ### client
