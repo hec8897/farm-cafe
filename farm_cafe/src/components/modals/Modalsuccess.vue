@@ -2,7 +2,6 @@
     <modal 
         name="succes-modal"
         :maxWidth="700"
-        :shiftY="0.1"
         width="800"
         height="auto"
         @opened="beforeOpen"
@@ -19,8 +18,7 @@
 <script>
 export default {
     methods:{
-        beforeOpen () {
-        },
+        beforeOpen () {},
         classModal(){
             this.$modal.hide('join-modal');
             this.$modal.show('class-modal');
@@ -30,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-div.alert.alert-info{
+div.alert{
     margin: 0;
     h3{
         font-size: 1.25rem;

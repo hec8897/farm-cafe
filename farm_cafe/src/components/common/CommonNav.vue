@@ -11,6 +11,7 @@
     <ModalJoin />
     <ModalJoinClass/>
     <Modalsuccess/>
+    <ModalFail />
 
 </div>
 </template>
@@ -19,10 +20,12 @@ import ModalLogin from '@/components/modals/ModalLogin.vue';
 import ModalJoin from '@/components/modals/ModalJoin.vue';
 import ModalJoinClass from '@/components/modals/ModalJoinClass.vue';
 import Modalsuccess from '@/components/modals/Modalsuccess.vue';
+import ModalFail from '@/components/modals/ModalFail.vue';
+
 
 export default {
     components:{
-        ModalLogin,ModalJoin,ModalJoinClass,Modalsuccess
+        ModalLogin,ModalJoin,ModalJoinClass,Modalsuccess,ModalFail
     },
       methods: {
         Modalshow (popup) {

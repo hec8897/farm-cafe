@@ -3,9 +3,10 @@
         name="join-modal"
         :adaptive="true"
         :scrollable="true"
-        width="90%"
-        :minHeight="700"
+        width="95%"
+        height="auto"
         :maxWidth="600"
+
     >
     <div class='inner'>
         <h2>우성 팜카페 회원가입</h2>
@@ -115,7 +116,7 @@
         </p>
         <div class='btns'>
             <div class='btn green'>네이버 아이디로 회원가입</div>
-            <div class='btn red' @click="Modalshow()">우성 팜카페 회원 가입</div>
+            <div class='btn red' @click="JoinData">우성 팜카페 회원 가입</div>
         </div>
     </div>
 
@@ -164,11 +165,12 @@ export default {
                 this.PwCheck = 'short'
             }
         },
-        Modalshow () {
+       JoinData() {
             this.$modal.show("succes-modal");
+            //가입성공
 
-            //this.$modal.show('class-modal');
-            // this.$modal.hide(popup);
+            // this.$modal.show("fail-modal");
+            //가입실패
         }
     }
 }
@@ -212,6 +214,7 @@ div.inner{
                     margin-left: 30px;
                     z-index: 999;
                     font-size: 0.875rem;
+                    background: #fff;
                     &.harf{width: 30%;}
                 }   
 
@@ -224,7 +227,6 @@ div.inner{
             }
         }
         div.p_box{
-            width: 100%;
             max-height: 150px;
             overflow-y: scroll;
             background: #f0f0f0;
@@ -251,11 +253,7 @@ div.inner{
             font-size:1.125rem;
         }
         div.btns{
-            width:90%;
-            position:absolute;
-            bottom:5%;
-            left:50%;
-            transform:translateX(-50%);
+            margin-top: 20px;
         }
 
     
