@@ -39,7 +39,7 @@
         
         <li>
             <span class='left'>
-                <b-icon icon="lock-fill" font-scale="1.5"></b-icon>
+                <b-icon icon="lock" font-scale="1.5"></b-icon>
             </span>
 
             <input  
@@ -82,7 +82,9 @@
 
          <li>
             <span class='left'>
-                <b-icon icon="phone" font-scale="1.5"></b-icon>
+                <b-icon 
+                icon="phone" 
+                font-scale="1.5"></b-icon>
             </span>
 
             <input  
@@ -92,6 +94,18 @@
                  />
         </li>
         <li>
+            <span class='left'>
+                <b-icon icon="briefcase-fill" font-scale="1.5"></b-icon>
+            </span>
+            <select v-model="InsertData.Class" class='full'>
+                <option value='null' disabled selected>가입유형을 선택하세요</option>
+                <option 
+                v-for="(Classification,i) in Classifications" 
+                :key="i" 
+                :value="Classification.value">{{Classification.Name}}</option>
+            </select>
+        </li>
+        <!-- <li>
             <span class='left'>
                 <b-icon icon="map" font-scale="1.5"></b-icon>
             </span>
@@ -103,7 +117,7 @@
                 :value="localList">{{localList}}</option>
             </select>
             <input class='harf' placeholder="시,구,군" v-model="InsertData.local2">
-        </li>
+        </li> -->
         </ul>
         <div class='p_box'>
             <infoAgree/>
@@ -140,10 +154,14 @@ export default {
                 password:null,
                 phone:null,
                 NicName:null,
-                local1:null,
-                local2:null
-            },
-            localLists:['서울','인천','경기','대전','세종','부산','울산','대구','광주','제주','강원','충남','충북','경북','충남','전남','전북'],
+                Class:null,
+            },            
+            Classifications:[
+                {idx:0,value:'Saller',Name:"판매 업자 (도매, 소매상)"},
+                {idx:1,value:'partner',Name:"제조사,광고사"},
+                {idx:2,value:'association',Name:"기관 및 협회"}
+                ]
+            // localLists:['서울','인천','경기','대전','세종','부산','울산','대구','광주','제주','강원','충남','충북','경북','충남','전남','전북'],
         }
     },
     methods:{
@@ -216,6 +234,9 @@ div.inner{
                     font-size: 0.875rem;
                     background: #fff;
                     &.harf{width: 30%;}
+                    &.full{
+                        width: 90%;
+                        }
                 }   
 
                 &.active{
@@ -230,6 +251,7 @@ div.inner{
             max-height: 150px;
             overflow-y: scroll;
             background: #f0f0f0;
+            border: 1px solid #d0d0d0;
         }
         p.agree{
             margin-top: 15px;
