@@ -1,5 +1,6 @@
 module.exports = {
   "devServer": {
+    overlay: false,
     "proxy": {
       "/": {
         "target": "http://localhost:8080",

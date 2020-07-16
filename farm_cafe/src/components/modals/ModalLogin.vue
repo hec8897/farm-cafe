@@ -14,7 +14,7 @@
         <div class='btns'>
             <div class='btn'>우성 로그인</div>
             <div class='btn green'>네이버 로그인</div>
-            <div class='btn red'>회원 가입</div>
+            <div class='btn red' @click="Modalshow()">회원 가입</div>
         </div>
     </div>
     <div class='inner right'>
@@ -26,7 +26,19 @@
 
     </modal>
 </template>
+<script>
 
+export default {
+  
+    methods: {
+          Modalshow () {
+            this.$modal.hide('login-modal');
+            this.$modal.show('join-modal');
+            // this.$modal.hide(popup);
+        }
+    },
+}
+</script>
 
 <style lang="scss">
 div.inner{

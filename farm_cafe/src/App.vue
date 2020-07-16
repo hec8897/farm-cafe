@@ -2,6 +2,7 @@
   <div id="app">
     <CommonNave/>
     
+    <router-link to='/about'>123</router-link>
     <router-view/>
   </div>
 </template>
