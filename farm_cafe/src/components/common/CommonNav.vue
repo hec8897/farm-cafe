@@ -9,16 +9,18 @@
 
     <ModalLogin />
     <ModalJoin />
+    <ModalJoinClass/>
 
 </div>
 </template>
 <script>
 import ModalLogin from '@/components/modals/ModalLogin.vue';
 import ModalJoin from '@/components/modals/ModalJoin.vue';
+import ModalJoinClass from '@/components/modals/ModalJoinClass.vue';
 
 export default {
     components:{
-        ModalLogin,ModalJoin
+        ModalLogin,ModalJoin,ModalJoinClass
     },
       methods: {
         Modalshow (popup) {

@@ -21,9 +21,6 @@
         <h2>로그인 광고 영역 </h2>
         <p>동영상, 이미지</p>
     </div>
-
-
-
     </modal>
 </template>
 <script>
@@ -31,7 +28,7 @@
 export default {
   
     methods: {
-          Modalshow () {
+        Modalshow () {
             this.$modal.hide('login-modal');
             this.$modal.show('join-modal');
             // this.$modal.hide(popup);

@@ -18,17 +18,18 @@
                 <b-icon icon="person-fill" font-scale="1.5"></b-icon>
             </span>
 
-            <input placeholder='사용자실 아이디를 입력하세요' v-model="InsertData.Id" @blur="checkId"/>
+            <input type='text' placeholder='사용자실 아이디를 입력하세요' v-model="InsertData.Id" @blur="checkId"/>
 
-            <span  
-                v-bind:class="{t_blue:IdCheck,t_red:IdCheck == false}" 
-                >
-                <em v-if="IdCheck">사용이 가능 한 아이디입니다.</em>
-                <em v-else-if="IdCheck == false">중복된 아이디입니다.</em>
+            <span>
+                <em class="t_blue" v-if="IdCheck == true">사용이 가능 한 아이디입니다.</em>
+                <em class="t_red" v-else-if="IdCheck == false">중복된 아이디입니다.</em>
+                <em class="t_red" v-else-if="IdCheck == 'short'">아이디는 6글자 이상이여야 합니다.</em>
+
             </span>   
 
             <span class='right'>
-                <b-icon icon="exclamation-circle-fill" variant="info" v-if="IdCheck"></b-icon>
+                <b-icon icon="exclamation-circle-fill" variant="info" v-if="IdCheck == true"></b-icon>
+                <b-icon icon="exclamation-circle-fill"  variant="danger" v-else-if="IdCheck == 'short'"></b-icon>
                 <b-icon icon="exclamation-circle-fill"  variant="danger" v-else-if="IdCheck == false"></b-icon>
             </span>
 
@@ -41,8 +42,19 @@
             </span>
 
             <input  
+                type='password'
                 placeholder='사용하실 비밀번호를 입력하세요' 
+                @blur="checkPw"
                 v-model="passwordCheck" />
+
+                  <span>
+                <em class="t_red" v-if="PwCheck == 'short'">아이디는 6글자 이상이여야 합니다.</em>
+
+            </span>   
+
+            <span class='right'>
+                <b-icon icon="exclamation-circle-fill"  variant="danger" v-if="PwCheck == 'short'"></b-icon>
+            </span>
         </li>
 
         <li v-bind:class="{active:PwCheck,beactive:PwCheck == false}">
@@ -51,10 +63,12 @@
             </span>
 
             <input  
+                type='password'
                 placeholder='비밀번호를 확인해주세요'
                 v-model="InsertData.password"
                 @blur="checkPw"
-                 />
+            />
+
             <span v-bind:class="{t_blue:PwCheck,t_red:PwCheck == false}">
                 <em v-if="PwCheck == false">패스워드가 다릅니다.</em>
             </span>   
@@ -71,6 +85,7 @@
             </span>
 
             <input  
+                type='number'
                 placeholder="연락처를 입력하세요('-'를 제외하고 입력하세요)"
                 v-model="InsertData.phone"
                  />
@@ -88,13 +103,19 @@
             </select>
             <input class='harf' placeholder="시,구,군" v-model="InsertData.local2">
         </li>
-
-
-        
         </ul>
+        <div class='p_box'>
+            <infoAgree/>
+        </div>
+        <p class='agree'>
+        <input type='checkbox' id='check'/>
+        <label for='check'>
+            개인정보 수집 및 이용에 동의합니다.
+        </label>
+        </p>
         <div class='btns'>
             <div class='btn green'>네이버 아이디로 회원가입</div>
-            <div class='btn red'>우성 팜카페 회원 가입</div>
+            <div class='btn red' @click="Modalshow()">우성 팜카페 회원 가입</div>
         </div>
     </div>
 
@@ -102,7 +123,12 @@
     </modal>
 </template>
 <script>
+import infoAgree from '../common/infoAgree.vue';
+
 export default {
+    components:{
+        infoAgree
+    },
     data(){
         return{
             IdCheck:null,
@@ -116,16 +142,30 @@ export default {
                 local1:null,
                 local2:null
             },
-            localLists:['서울','인천','경기','대전','세종','부산','울산','대구','광주','제주','강원','충남','충북','경북','충남','전남','전북']
+            localLists:['서울','인천','경기','대전','세종','부산','울산','대구','광주','제주','강원','충남','충북','경북','충남','전남','전북'],
         }
     },
     methods:{
         checkId(){
             //아이디 중복체크
-            this.IdCheck = this.InsertData.Id == 1?true:false
+            if(this.InsertData.Id.length > 5){
+                this.IdCheck = this.InsertData.Id == 111111?true:false
+            }
+            else{
+                this.IdCheck = 'short'
+            }
         },
         checkPw(){
-            this.PwCheck = this.passwordCheck!=this.InsertData.password?false:true
+            if(this.passwordCheck.length > 4){
+                this.PwCheck = this.passwordCheck!=this.InsertData.password?false:true
+            }
+            else{
+                this.PwCheck = 'short'
+            }
+        },
+        Modalshow () {
+            this.$modal.show('class-modal');
+            // this.$modal.hide(popup);
         }
     }
 }
@@ -141,8 +181,9 @@ div.inner{
         ul{
             li{
                 position: relative;
-                margin: 15px 0px;
+                margin: 20px 0px;
                 border-bottom: 1px solid #d0d0d0;
+
                 span{
                     position: absolute;
                     font-size: 0.75rem;
@@ -158,8 +199,7 @@ div.inner{
                         left: 1%;
                     }
                 }
-                
-                  
+
                 input,select{
                     display: inline-block;
                     width: 80%;
@@ -171,12 +211,34 @@ div.inner{
                     font-size: 0.875rem;
                     &.harf{width: 30%;}
                 }   
+
                 &.active{
                     border-bottom: 1px solid skyblue;
                 }
                 &.beactive{
                     border-bottom: 1px solid tomato;
                 }
+            }
+        }
+        div.p_box{
+            width: 100%;
+            max-height: 150px;
+            overflow-y: scroll;
+            background: #f0f0f0;
+        }
+        p.agree{
+            margin-top: 15px;
+            input[type=checkbox]{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                vertical-align: middle;
+                margin-right: 5px;
+
+            }
+            label{
+                cursor: pointer;
+                vertical-align: middle;
             }
         }
           
