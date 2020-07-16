@@ -10,3 +10,10 @@
     <div class='inner'>추가 정보</div>
     </modal>
 </template>
+
+<script>
+export default {
+    props:['mode']
+    
+}
+</script>

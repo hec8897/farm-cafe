@@ -1,8 +1,10 @@
 <template>
     <modal 
         name="fail-modal"
-        width="50%"
-        :minWidth="340"
+        :adaptive="true"
+        width="90%"
+        :maxWidth="650"
+        shiftY="0.1"
         height="auto"
         >
         

@@ -134,23 +134,25 @@
         </div>
     </div>
 
+    <ModalJoinClass v-bind:mode="InsertData.Class"/>
 
     </modal>
 </template>
 <script>
 import infoAgree from '../common/infoAgree.vue';
+import ModalJoinClass from '@/components/modals/ModalJoinClass.vue';
 
 export default {
     components:{
-        infoAgree
+        infoAgree,ModalJoinClass
     },
     data(){
         return{
             IdCheck:null,
             PwCheck:null,
-            passwordCheck:null,
+            passwordCheck:"",
             InsertData:{
-                Id:null,
+                Id:"",
                 password:null,
                 phone:null,
                 NicName:null,
