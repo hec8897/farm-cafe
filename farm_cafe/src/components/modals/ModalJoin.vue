@@ -146,6 +146,7 @@ export default {
         }
     },
     methods:{
+   
         checkId(){
             //아이디 중복체크
             if(this.InsertData.Id.length > 5){
@@ -164,7 +165,9 @@ export default {
             }
         },
         Modalshow () {
-            this.$modal.show('class-modal');
+            this.$modal.show("succes-modal");
+
+            //this.$modal.show('class-modal');
             // this.$modal.hide(popup);
         }
     }

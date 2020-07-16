@@ -10,6 +10,7 @@
     <ModalLogin />
     <ModalJoin />
     <ModalJoinClass/>
+    <Modalsuccess/>
 
 </div>
 </template>
@@ -17,10 +18,11 @@
 import ModalLogin from '@/components/modals/ModalLogin.vue';
 import ModalJoin from '@/components/modals/ModalJoin.vue';
 import ModalJoinClass from '@/components/modals/ModalJoinClass.vue';
+import Modalsuccess from '@/components/modals/Modalsuccess.vue';
 
 export default {
     components:{
-        ModalLogin,ModalJoin,ModalJoinClass
+        ModalLogin,ModalJoin,ModalJoinClass,Modalsuccess
     },
       methods: {
         Modalshow (popup) {
