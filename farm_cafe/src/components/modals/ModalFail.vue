@@ -4,7 +4,7 @@
         :adaptive="true"
         width="90%"
         :maxWidth="650"
-        shiftY="0.1"
+        :shiftY="0.1"
         height="auto"
         >
         

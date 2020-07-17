@@ -3,31 +3,56 @@
         name="login-modal"
         :adaptive="true"
         width="90%"
-        :minHeight="400"
-        :maxWidth="600"
+        :minHeight="500"
+        :maxWidth="800"
+
         :focusTrap="true"
     >
-    <div class='inner left'>
-        <h2>우성 팜카페 로그인</h2>
-        <input placeholder='사용자 코드(아이디)를 입력하세요'/>
-        <input placeholder='비밀번호를 입력하세요' type='password'/>
-        <div class='btns'>
-            <div class='btn'>우성 로그인</div>
-            <div class='btn green'>네이버 로그인</div>
-            <div class='btn red' @click="Modalshow()">회원 가입</div>
+        <div class='inner left'>
+            <h2>우성 팜카페 로그인</h2>
+            <ul>
+            <li>
+                  <span class='left'>
+                <b-icon icon="person-fill" font-scale="1.5"></b-icon>
+            </span>
+            <input placeholder='사용자 코드(아이디)를 입력하세요' v-model="LoginId"/></li>
+            <li>
+            <span class='left'>
+                <b-icon icon="lock" font-scale="1.5"></b-icon>
+            </span>
+            <input placeholder='비밀번호를 입력하세요' type='password' v-model="LoginPw"/></li>
+            </ul>
+            <div class='btns'>
+                <div class='btn' @click="LoginFn">우성 로그인</div>
+                <div class='btn green'>네이버 로그인</div>
+                <div class='btn red' @click="Modalshow()">회원 가입</div>
+            </div>
         </div>
-    </div>
-    <div class='inner right'>
-        <h2>로그인 광고 영역 </h2>
-        <p>동영상, 이미지</p>
-    </div>
+        <div class='inner right'>
+            <h2>로그인 광고 영역 </h2>
+            <p>동영상, 이미지</p>
+        </div>
     </modal>
 </template>
 <script>
 
 export default {
-  
+    data(){
+        return{
+            LoginId:"",
+            LoginPw:""
+        }
+    },
     methods: {
+        LoginFn(){
+            let LoginData = {
+                login:true,
+                // LoginId:this.LoginId,
+                // LoginPw:this.LoginPw
+            }
+            this.$store.commit('loginFn',LoginData)
+            console.log(this.$store.state)
+        },
         Modalshow () {
             this.$modal.hide('login-modal');
             this.$modal.show('join-modal');
@@ -39,16 +64,25 @@ export default {
 
 <style lang="scss">
 div.inner{
-    height:100%;
     &.left{
-        width:50%;
-        float:left;
+        height: auto;
+        vertical-align: bottom;
+        width:45%;
+        display: inline-block;
         padding:15px;
         box-sizing:border-box;
         position:relative;
+        @media (max-width: 1024px) {
+            width: 100%;
+            display: block;
+        }
+        ul{
+            li{
+            border-bottom: 1px solid #d0d0d0;
+            }
+        }
         input{
             border:0px;
-            border-bottom: 1px solid #d0d0d0;
             border-radius:0px;
         }        
         h2{
@@ -57,17 +91,19 @@ div.inner{
             font-size:1.125rem;
         }
         div.btns{
-            width:90%;
-            position:absolute;
+            width: 100%;
             bottom:5%;
-            left:50%;
-            transform:translateX(-50%);
         }
     }
     &.right{
-        width:50%;
-        float:right;
+        width:54%;
+        height: 100%;
+        float: right;
         background:skyblue;
+          @media (max-width: 1024px) {
+            width: 100%;
+            float: none;
+        }
 
         h2{
             font-size:1rem;
