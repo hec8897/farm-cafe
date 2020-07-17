@@ -8,7 +8,6 @@
             return {
                 menu: [
                     {
-                        header: true,
                         title: '우성소프트 팜카페',
                         hiddenOnCollapse: true,
                           icon: {
