@@ -21,7 +21,6 @@
 <script>
 export default {
     methods:{
-        beforeOpen () {},
         classModal(){
             this.$modal.hide('join-modal');
             this.$modal.show('class-modal');
