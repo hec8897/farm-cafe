@@ -47,10 +47,8 @@
                 placeholder='사용하실 비밀번호를 입력하세요' 
                 @blur="checkPw"
                 v-model="passwordCheck" />
-
-                  <span>
+            <span>
                 <em class="t_red" v-if="PwCheck == 'short'">아이디는 6글자 이상이여야 합니다.</em>
-
             </span>   
 
             <span class='right'>
