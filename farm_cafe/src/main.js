@@ -8,8 +8,10 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './define.scss';
+import VueSidebarMenu from 'vue-sidebar-menu'
+import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
-
+Vue.use(VueSidebarMenu)
 Vue.config.productionTip = false
 Vue.use(VModal)
 Vue.use(BootstrapVue)
