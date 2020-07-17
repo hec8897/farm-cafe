@@ -1,13 +1,11 @@
 <template>
 <div>
     <nav>
-        <div v-if="login">
-        <span>{{login}}</span>
-            <span class='pointer' @click="Modalshow('login-modal')"></span>
+        <div v-if="this.$store.state.login">
+            <span class='pointer'><a href="">우성소프트 홈페이지</a></span>
             <span class='pointer' @click="Modalshow('join-modal')">마이페이지</span>
         </div>
          <div v-else>
-            <span>{{login}}</span>
             <span class='pointer' @click="Modalshow('login-modal')">로그인</span>
             <span class='pointer' @click="Modalshow('join-modal')">회원가입</span>
         </div>
@@ -19,19 +17,11 @@
 </template>
 <script>
 
-
-
 export default {
     data(){
         return{
-            login:false
+            login:this.$store.state.login
         }
-    },
-    components:{
-        // ModalLogin,ModalJoin,ModalJoinClass,Modalsuccess,ModalFail
-    },
-    updated(){
-        this.login =  this.$store.state.login
     },
       methods: {
         Modalshow (popup) {

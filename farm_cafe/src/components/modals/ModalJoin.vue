@@ -184,7 +184,7 @@ export default {
             }
         },
        JoinData() {
-            this.$modal.show("succes-modal");
+            this.$modal.show("succes-modal",{mode: 'join'});
             //가입성공
 
             // this.$modal.show("fail-modal");

@@ -51,7 +51,11 @@ export default {
                 // LoginPw:this.LoginPw
             }
             this.$store.commit('loginFn',LoginData)
-            console.log(this.$store.state)
+                if(this.$store.state.login.login == true){
+                    this.$modal.show('succes-modal', {mode: 'login'});
+                    this.$modal.hide('login-modal')
+                }
+            
         },
         Modalshow () {
             this.$modal.hide('login-modal');
