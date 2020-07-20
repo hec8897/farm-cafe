@@ -18,13 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-div.home{
-
-  section.wrap{
-    padding: 100px 0px;
-  }
-}
-  
-</style>

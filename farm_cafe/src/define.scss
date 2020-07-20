@@ -164,6 +164,9 @@ html,body{
 
 section{
     padding: 100px 0px;
+    @media (max-width:1024px) {
+        padding: 50px 0px;
+    }
     h2.section_tit{
         font-size: 1.57rem;
         position: relative;
@@ -181,4 +184,8 @@ section{
             }
         }
     }
+}
+
+table{
+    table-layout: fixed;
 }

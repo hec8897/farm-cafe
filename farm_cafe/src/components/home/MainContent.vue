@@ -1,8 +1,8 @@
 <template>
     <div class='content'>
     <section class='section1 wrap'>
-        <MainContentInfo/>
         <AccControl/>
+        <MainContentInfo/>
     </section>
     <section class='section2'>
     123
@@ -16,12 +16,5 @@ export default {
     components:{
         MainContentInfo,AccControl
     }
-    
 }
 </script>
-<style lang="scss">
-section.section1{
-}
-
-    
-</style>

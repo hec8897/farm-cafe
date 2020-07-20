@@ -27,7 +27,11 @@ div.hot{
     display: inline-block;
     vertical-align: top;
     width: 26%;
-    margin-left: 2%;
+    margin-right: 2%;
+    @media (max-width: 1024px) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
     div.acc{
         margin-top: 10px;
         border: 1px solid MediumSeaGreen;
@@ -64,11 +68,10 @@ div.hot{
     
     div.advertise{
         width: 100%;
-        height: 170px;
-        background: #d0d0d0;
+        height: auto;
         img{
             width: 100%;
-            height: 100%;
+            height: auto;
             overflow: hidden;
         }
     }

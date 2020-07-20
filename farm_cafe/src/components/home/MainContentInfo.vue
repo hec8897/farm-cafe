@@ -78,6 +78,9 @@ export default {
         display: inline-block;
         width: 70%;
         vertical-align: bottom;
+        @media (max-width: 1024px) {
+        width: 100%;
+        }
     }
     table.info{
         width: 100%;
@@ -100,12 +103,18 @@ export default {
             font-size: 0.875rem;
             text-align: center;
             padding: 10px 0px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             span{
                 color: tomato;
             }
-            &:nth-child(1){
-                width: 20%;
-                font-size: 0.875rem;
+      
+        
+            &:nth-child(4){
+                @media (max-width: 1024px) {
+                    display: none;
+                }
             }
         }
     }
