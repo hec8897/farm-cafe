@@ -1,4 +1,5 @@
 module.exports = {
+  runtimeCompiler: true, 
   "devServer": {
     overlay: false,
     "proxy": {
@@ -10,7 +11,5 @@ module.exports = {
   },
   "publicPath": "./",
   "outputDir": "../server/public",
-  "transpileDependencies": [
-    "vuetify"
-  ]
+
 }

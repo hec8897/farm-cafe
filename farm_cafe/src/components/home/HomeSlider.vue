@@ -9,6 +9,9 @@
 </template>
 
 <style lang="scss">
+div.jumbotron {
+        margin-bottom: 0;
+        border-radius: 0;
     div.slide{
         height:  350px;
         h2{
@@ -19,5 +22,6 @@
             font-size: 1.125rem;
         }
     }
+}
     
 </style>

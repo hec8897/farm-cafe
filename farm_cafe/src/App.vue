@@ -3,7 +3,7 @@
 
 <template>
   <div id="app">
-    <CommonNav/>
+    <AsideBar/>
 
        <ModalLogin />
        <ModalJoin />
@@ -16,8 +16,7 @@
 </template>
 <script>
 
-import CommonNav from '@/components/common/CommonNav.vue'
-
+import AsideBar from '@/components/common/AsideBar.vue'
 //popup
 import ModalLogin from '@/components/modals/ModalLogin.vue';
 import ModalJoin from '@/components/modals/ModalJoin.vue';
@@ -27,7 +26,7 @@ import ModalFail from '@/components/modals/ModalFail.vue';
 
 export default {
   components:{
-    CommonNav,
+    AsideBar,
     ModalLogin,
     ModalJoin,
     ModalJoinClass,

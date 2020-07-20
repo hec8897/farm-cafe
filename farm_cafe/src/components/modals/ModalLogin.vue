@@ -27,7 +27,8 @@
                 <div class='btn green'>네이버 로그인</div>
                 <div class='btn red' @click="Modalshow()">회원 가입</div>
             </div>
-        </div>
+            <a href="">비밀번호를 잊으셨나요?</a>        
+            </div>
         <div class='inner right'>
             <h2>로그인 광고 영역 </h2>
             <p>동영상, 이미지</p>
@@ -47,14 +48,17 @@ export default {
         LoginFn(){
             let LoginData = {
                 login:true,
-                // LoginId:this.LoginId,
+                LoginId:this.LoginId,
+                Name:"우성소프트"
                 // LoginPw:this.LoginPw
             }
             this.$store.commit('loginFn',LoginData)
                 if(this.$store.state.login.login == true){
                     this.$modal.show('succes-modal', {mode: 'login'});
-                    this.$modal.hide('login-modal')
                 }
+
+                    this.$modal.hide('login-modal')
+
             
         },
         Modalshow () {
@@ -73,14 +77,16 @@ div.inner{
         vertical-align: bottom;
         width:45%;
         display: inline-block;
-        padding:15px;
         box-sizing:border-box;
         position:relative;
+        padding:15px;
+        padding-top: 50px;
         @media (max-width: 1024px) {
             width: 100%;
             display: block;
         }
         ul{
+            margin: 50px 0;
             li{
             border-bottom: 1px solid #d0d0d0;
             }
@@ -96,7 +102,7 @@ div.inner{
         }
         div.btns{
             width: 100%;
-            bottom:5%;
+            margin: 10px 0px;
         }
     }
     &.right{
