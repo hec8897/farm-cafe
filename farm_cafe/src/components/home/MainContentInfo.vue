@@ -1,10 +1,11 @@
+
 <template>
-    <section class="section1">
-        <div class="wrap">
-        <h2>공지사항
-        <span>더보기<b-icon icon="plus"></b-icon></span>
+        <div class="info">
+        <h2 class='section_tit'>
+            팜카페 공지사항
+            <span>더보기<b-icon icon="plus"></b-icon></span>
         </h2>
-        <table>
+        <table class='info'>
             <thead>
                 <tr>
                     <td><span>카페 회칙 안내</span></td>
@@ -23,7 +24,6 @@
             </tbody>
         </table>
         </div>
-    </section>
 </template>
 
 <script>
@@ -74,26 +74,14 @@ export default {
 </script>
 
 <style lang="scss">
-section.section1{
-    h2{
-        font-size: 1.57rem;
-        position: relative;
-        span{
-            position: absolute;
-            right: 1%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.875rem;
-            color: #666;
-            cursor: pointer;
-            &:hover{
-                color: #444;
-            }
-        }
+    div.info{
+        display: inline-block;
+        width: 70%;
+        vertical-align: bottom;
     }
-    table{
-        margin: 20px 0px;
+    table.info{
         width: 100%;
+        margin: 20px 0px;
         thead{
             background: #d9d9d9;
             border-top: 1px solid #666;
@@ -121,6 +109,6 @@ section.section1{
             }
         }
     }
-}
+
     
 </style>

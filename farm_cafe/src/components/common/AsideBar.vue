@@ -62,6 +62,7 @@ nav.lnb{
     width: 100%;
     background: #252F44;
     padding: 20px;
+    z-index: 999;
         @media (max-width: 1024px) {
             padding: 10px;
         }

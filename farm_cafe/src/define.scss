@@ -164,4 +164,21 @@ html,body{
 
 section{
     padding: 100px 0px;
+    h2.section_tit{
+        font-size: 1.57rem;
+        position: relative;
+        margin-bottom: 20px;
+        span{
+            position: absolute;
+            right: 1%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.875rem;
+            color: #666;
+            cursor: pointer;
+            &:hover{
+                color: #444;
+            }
+        }
+    }
 }
