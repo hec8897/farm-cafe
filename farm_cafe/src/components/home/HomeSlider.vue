@@ -1,12 +1,25 @@
 <template>
      <b-jumbotron  bg-variant="info" text-variant="white">
     <div class='wrap slide'>
-    <p>전국 농자재 판매 관리인의 커뮤니티</p>
-    <h2>우성 팜카페</h2>
-    <p>혼자하면 힘들지만, 함께하면 든든합니다.</p>
-    </div>  
+        <p>전국 농자재 판매 관리인의 커뮤니티</p>
+        <h2>우성 팜카페</h2>
+        <p>혼자하면 힘들지만, 함께하면 든든합니다.</p>
+        <div>
+            <input type='text' placeholder="검색어 입력" v-model="Search"/>
+            <b-icon class='right' icon="search"></b-icon>
+        </div>
+    </div>
   </b-jumbotron>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            Search:""
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 div.jumbotron {
@@ -20,6 +33,24 @@ div.jumbotron {
         }
         p{
             font-size: 1.125rem;
+        }
+        div{
+            position: relative;
+            input{
+                width: 400px;
+                border-radius: 2px;
+                margin-top: 20px;
+                background-color: rgba(255,255,255,0.6);
+                padding-left: 30px;
+                border: 0px;
+            }
+            .right{
+                position: absolute;
+                left: .5%;
+                top:50%;
+                color: #222;
+                transform: translateY(-50%);
+            }
         }
     }
 }

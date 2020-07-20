@@ -1,6 +1,7 @@
 <template>
 <div class="right">
         <div v-if="this.$store.state.login">
+            <span>{{$store.state.Name}} (관리자)</span>
             <span class='pointer' @click="Modalshow('join-modal')">마이페이지</span>
             <span class='pointer'>로그아웃</span>
         </div>
