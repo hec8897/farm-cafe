@@ -10,8 +10,10 @@
        <ModalJoinClass/>
        <Modalsuccess/>
        <ModalFail />
-  
-      <router-view/>
+      <main>
+        <router-view/>
+      </main>
+
   </div>
 </template>
 <script>
@@ -36,4 +38,7 @@ export default {
 }
 </script>
 <style lang="scss">
+main{
+  padding-top: 60px;
+}
 </style>

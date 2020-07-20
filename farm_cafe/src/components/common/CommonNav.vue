@@ -27,8 +27,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
     div.right{
         float: right;
         color: cornsilk;

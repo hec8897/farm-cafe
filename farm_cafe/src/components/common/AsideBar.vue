@@ -58,6 +58,7 @@ export default {
 </script>
 <style lang="scss">
 nav.lnb{
+    position: fixed;
     width: 100%;
     background: #252F44;
     padding: 20px;
