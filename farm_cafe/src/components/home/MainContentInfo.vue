@@ -87,18 +87,20 @@ export default {
         width: 100%;
         margin: 20px 0px;
         thead{
-            background: #d9d9d9;
+            background: #f0f0f0;
             border-top: 1px solid #666;
+        }
+        tr{
+            cursor: pointer;
+            border-bottom: 1px solid #d0d0d0;
         }
         tbody{
             tr:hover{
-                cursor: pointer;
                 background-color: rgba(0,0,0,0.05);
+                font-weight: bold;
             }
         }
-        tr{
-            border-bottom: 1px solid #d0d0d0;;
-        }
+      
       
         td{
             font-size: 0.875rem;
@@ -110,9 +112,14 @@ export default {
             span{
                 color: tomato;
             }
-      
-        
+            &:nth-child(1){
+                width: 20%;
+            }
+            &:nth-child(3){
+                width: 10%;
+            }
             &:nth-child(4){
+                width: 20%;
                 @media (max-width: 1024px) {
                     display: none;
                 }
