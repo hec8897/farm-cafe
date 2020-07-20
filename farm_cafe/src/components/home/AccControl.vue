@@ -31,6 +31,7 @@ div.hot{
     @media (max-width: 1024px) {
         width: 100%;
         margin-bottom: 20px;
+        margin-right: 0;
     }
     div.acc{
         margin-top: 10px;

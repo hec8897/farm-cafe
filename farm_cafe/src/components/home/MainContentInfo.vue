@@ -2,6 +2,7 @@
 <template>
         <div class="info">
         <h2 class='section_tit'>
+        <b-icon icon="chat-square-quote" variant="success"></b-icon>
             팜카페 공지사항
             <span>더보기<b-icon icon="plus"></b-icon></span>
         </h2>

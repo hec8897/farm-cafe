@@ -37,7 +37,8 @@ div.jumbotron {
         div{
             position: relative;
             input{
-                width: 400px;
+                width: 100%;
+                max-width: 350px;
                 border-radius: 2px;
                 margin-top: 20px;
                 background-color: rgba(255,255,255,0.6);
@@ -50,6 +51,9 @@ div.jumbotron {
                 top:50%;
                 color: #222;
                 transform: translateY(-50%);
+                @media (max-width: 1024px) {
+                    left: 1.5%;
+                }
             }
         }
     }

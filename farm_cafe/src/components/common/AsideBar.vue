@@ -3,7 +3,7 @@
         <h2>우성팜카페</h2>
             <ul class='list' v-bind:class="{active:show}">
                 <li class='pc' >
-                공지사항
+                    공지사항
                     <div class='hidden_menu'>
                         <div>
                             <p>카페 회칙</p>
@@ -11,12 +11,18 @@
                         </div>
                     </div>
                 </li>
+
                 <li class='pc'>장사 이야기</li>
+
                 <li class='pc'>자유게시판</li>
+
                 <li class='pc'>농업계 새소식</li>
+
                 <li class='pc'>스마트팜 TV</li>
-                <li class='disable'>제조사 만남의 광장
-                        <div class='hidden_menu'>
+
+                <li class='disable'>
+                    제조사 만남의 광장
+                    <div class='hidden_menu'>
                         <div>
                             <p>작물보호제 제조사</p>
                             <p>비료 제조사</p>
@@ -29,8 +35,14 @@
         
             </ul>
           <dd class='mo' @click="Navshow">
-                <b-icon icon="caret-up-fill" v-if="show"></b-icon>
-                <b-icon icon="caret-down-fill" v-else></b-icon>
+                <span v-if="show">
+                    닫기
+                    <b-icon icon="caret-up-fill"></b-icon>
+                </span>
+                <span v-else>
+                    더보기
+                    <b-icon icon="caret-down-fill"></b-icon>
+                </span>
             </dd>
       <CommonNav/>
     </nav>
@@ -63,15 +75,15 @@ nav.lnb{
     background: #252F44;
     padding: 20px;
     z-index: 999;
-        @media (max-width: 1024px) {
-            padding: 10px;
-        }
+    @media (max-width: 1024px) {
+        padding: 10px;
+    }
 
     h2{
         color: #fff;
         font-size: 1.25rem;
+        margin-right: 35px;
         display: inline;
-        margin-right: 30px;
         @media (max-width: 1024px) {
             display: block;
             margin-bottom: 20px;
@@ -80,13 +92,12 @@ nav.lnb{
     ul.list{
         text-align: center;
         display: inline;
-        color: #fff;
-        transition: .1s ease-in;
         li{
             display: inline-block;
             margin-right: 10px;
             font-weight: 100;
             position: relative;
+            color: #fff;
             cursor: pointer;
       
             div.hidden_menu{
@@ -97,10 +108,12 @@ nav.lnb{
                 left: 50%;
                 transform: translateX(-50%);
                 padding: 15px;
+                opacity: 0.0;
+                transition: .1s ease-in-out;
               
                 div{
-                    background-color: rgba(255,255,255,0.9);
-                    border-radius: 3px;;
+                    background-color: #fff;
+                    border-radius: 3px;
                     p{
                         color: #444;
                         padding: 10px 0px;
@@ -114,6 +127,7 @@ nav.lnb{
             &:not(.disable){
                 &:hover div.hidden_menu{
                     visibility: visible;
+                    opacity: 1.0;
                     @media (max-width: 1024px) {
                         visibility: hidden;
                         }
@@ -139,11 +153,11 @@ nav.lnb{
         }
 
     dd.mo{
-        display: none;
         cursor: pointer;
         color: #fff;
+        display: none;
+        text-align: right;
         @media (max-width: 1024px) {
-            text-align: right;
             display: block;
         }
     }

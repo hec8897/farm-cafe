@@ -111,8 +111,7 @@ div.inner{
         float: right;
         background:skyblue;
           @media (max-width: 1024px) {
-            width: 100%;
-            float: none;
+              display: none;
         }
 
         h2{
