@@ -34,7 +34,10 @@ div.hot{
         border-radius: 2px;
         margin-bottom: 20px;
         div.head{
-            padding: 10px 5px;
+            padding: 15px 5px;
+            h3{
+                font-size: 0.875rem;
+            }
             p{
                 margin: 10px 0px;
                 font-size: 0.875rem;
