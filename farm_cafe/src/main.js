@@ -9,6 +9,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@/assets/styles/custom.scss';
 import VueCarousel from 'vue-carousel';
+import lineClamp from 'vue-line-clamp'
+ 
+Vue.use(lineClamp, {
+  textOverflow:'ellipsis'
+})
  
 Vue.use(VueCarousel);
 Vue.use(VModal)
