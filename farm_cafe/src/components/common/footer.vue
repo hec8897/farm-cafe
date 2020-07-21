@@ -33,18 +33,19 @@ footer{
     ul{
         text-align: center;
         margin: 40px 0px;
-
         li{
-            display: inline;
+            display: inline-block;
             margin: 0px 15px;
             color: #fff;
+            line-height: 2.5rem;
+            word-break: keep-all;
+            }
         }
-    }
-    p{
-        color: #fff;
-        margin: 5px 0px;
-        font-size: 0.875rem;
-    }
+        p{
+            color: #fff;
+            margin: 5px 0px;
+            font-size: 0.875rem;
+        }
     }
 }
     
