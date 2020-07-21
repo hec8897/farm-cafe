@@ -1,6 +1,6 @@
 <template>
     <div class='product'>
-    <h2>농자제 소식</h2>
+    <h2>농자재 소식</h2>
         <Carousel 
             class='sliders'
             :per-page-custom=[[1024,1],[768,2],[480,2],[360,2]]
