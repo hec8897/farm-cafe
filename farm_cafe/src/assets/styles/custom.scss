@@ -1,6 +1,8 @@
 $MainColor:MediumSeaGreen;
 $red:tomato;
+$blue:skyblue;
 $Black:#444;
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=Roboto:wght@100;400;700&display=swap');
 
 html, body, div, span, applet, object, iframe,
@@ -42,10 +44,7 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 
 /* input 기본 스타일 초기화 */
 input[type=text],input[type=number],input[type=password]{
@@ -90,12 +89,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*********class element 선언************/
 
-
 html,body{
     font-family: 'Noto Sans KR','Roboto', sans-serif;
     margin: 0;
     color:#222;
     font-size: 18px;
+    letter-spacing: -0.5px;
     @media (max-width:767px) {
         font-size: 16px;
     }
@@ -105,7 +104,6 @@ html,body{
     margin: 0 auto;
     @media (max-width:1200px) {
         max-width: 98%;
-        
     }
 }
 .pointer{
@@ -116,14 +114,17 @@ html,body{
     }
 }
 .t_blue{
-    color: skyblue;
-
+    color: $blue;
 }
 .t_red{
-    color: Tomato;
-
+    color: $red;
+}
+.t_green{
+    color: $MainColor;
 }
 
+
+/*************btn default*************/
 .btn{
     cursor: pointer;
     width: 100%;
@@ -141,31 +142,32 @@ html,body{
         transform: translateY(-2px);
     }
     &.red{
-        background-color: Tomato;
+        background-color: $red;
         &:hover{
-            background-color: darken(Tomato,10%);
+            background-color: darken($red,10%);
         }
 
     }
     &.green{
-        background-color: #15c654;
+        background-color: $MainColor;
         &:hover{
-            background-color: darken(#15c654,10%);
+            background-color: darken($MainColor,10%);
         }
     }
     &.blue{
-        background-color: skyblue;
+        background-color:$blue;
         &:hover{
-            background-color: darken(skyblue,10%);
+            background-color: darken($blue,10%);
         }
 
     }
 }
 
+/**********section default************/
 section{
-    padding: 100px 0px;
+    padding: 50px 0px;
     @media (max-width:1024px) {
-        padding: 50px 0px;
+        padding: 25px 0px;
     }
     h2.section_tit{
         font-size: 1.57rem;
@@ -186,6 +188,37 @@ section{
     }
 }
 
+/***********table default***********/
 table{
     table-layout: fixed;
+    width: 100%;
+    tr{
+        border-bottom: 1px solid #d0d0d0;
+        &:nth-child(2n){
+            background: #f0f0f0;
+        }
+    }
+    td{
+        font-size: 0.875rem;
+        padding: 10px 0px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    thead{
+        background-color: $MainColor;
+        color: #fff;
+    }
+    tbody{
+        tr{
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(0,0,0,0.05);
+                font-weight: bold;
+            }
+        }
+    }
 }
+
+

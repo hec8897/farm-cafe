@@ -7,8 +7,10 @@ import VModal from 'vue-js-modal'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import './define.scss';
-
+import '@/assets/styles/custom.scss';
+import VueCarousel from 'vue-carousel';
+ 
+Vue.use(VueCarousel);
 Vue.use(VModal)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

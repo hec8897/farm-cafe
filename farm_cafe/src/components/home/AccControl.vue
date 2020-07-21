@@ -1,12 +1,16 @@
 <template>
     <div class='wrap hot'>
+        <p class='visitor'>
+            <span>total: {{visitor.total}}</span>
+            <span>today: {{visitor.today}}</span>
+        </p>
         <div class='acc'>
             <div class='head'>
                 <h3>[서울] {{$store.state.Name}} (관리자)</h3>
             </div>
 
             <div class='middle' v-if="!this.$store.state.login">
-                <div class="btn" @click="$modal.show('login-modal')">팜카페 로그인</div>
+                <div class="btn green" @click="$modal.show('login-modal')">팜카페 로그인</div>
             </div>
 
             <div class='foot' v-else>
@@ -20,6 +24,18 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            visitor:{
+                total:100,
+                today:5
+            }
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 
@@ -28,6 +44,20 @@ div.hot{
     vertical-align: top;
     width: 26%;
     margin-right: 2%;
+
+    p.visitor{
+        span{
+           font-size: 0.75rem;
+            margin-right: 10px;
+            background: MediumSeaGreen;
+            color: #fff;
+            padding: 1px 5px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+            font-weight: 100;
+        }
+    }
+
     @media (max-width: 1024px) {
         width: 100%;
         margin-bottom: 20px;

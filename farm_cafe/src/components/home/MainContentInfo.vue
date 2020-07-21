@@ -9,7 +9,7 @@
         <table class='info'>
             <thead>
                 <tr>
-                    <td><span>카페 회칙 안내</span></td>
+                    <td>카페회칙</td>
                     <td>제목</td>
                     <td>조회수</td>
                     <td>날짜</td>
@@ -84,34 +84,8 @@ export default {
         }
     }
     table.info{
-        width: 100%;
-        margin: 20px 0px;
-        thead{
-            background: #f0f0f0;
-            border-top: 1px solid #666;
-        }
-        tr{
-            cursor: pointer;
-            border-bottom: 1px solid #d0d0d0;
-        }
-        tbody{
-            tr:hover{
-                background-color: rgba(0,0,0,0.05);
-                font-weight: bold;
-            }
-        }
-      
-      
         td{
-            font-size: 0.875rem;
             text-align: center;
-            padding: 10px 0px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            span{
-                color: tomato;
-            }
             &:nth-child(1){
                 width: 20%;
             }

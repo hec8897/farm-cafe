@@ -4,17 +4,18 @@
         <AccControl/>
         <MainContentInfo/>
     </section>
-    <section class='section2'>
-    123
+    <section class='section2 wrap'>
+        <FarmNews/>
     </section>
     </div>
 </template>
 <script>
 import MainContentInfo from './MainContentInfo'
 import AccControl from './AccControl'
+import FarmNews from './FarmNews'
 export default {
     components:{
-        MainContentInfo,AccControl
+        MainContentInfo,AccControl,FarmNews
     }
 }
 </script>
