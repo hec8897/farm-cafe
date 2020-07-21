@@ -13,12 +13,14 @@
       <main>
         <router-view/>
       </main>
-
+      <Footer/>
   </div>
 </template>
 <script>
 
 import AsideBar from '@/components/common/AsideBar.vue'
+import Footer from '@/components/common/footer.vue'
+
 //popup
 import ModalLogin from '@/components/modals/ModalLogin.vue';
 import ModalJoin from '@/components/modals/ModalJoin.vue';
@@ -29,6 +31,7 @@ import ModalFail from '@/components/modals/ModalFail.vue';
 export default {
   components:{
     AsideBar,
+    Footer,
     ModalLogin,
     ModalJoin,
     ModalJoinClass,
