@@ -7,9 +7,10 @@
                 <img v-bind:src="list.img" alt="">
             </div>
             <div class="text">
-                <h2>{{list.tit}}</h2>
-                <p v-line-clamp="3">{{list.desc}}</p>
+                <h2>{{list.tit}}
                 <span>{{list.date}}</span>
+                </h2>
+                <p v-line-clamp="3">{{list.desc}}</p>
             </div>
         </li>
     </ul>
@@ -68,6 +69,16 @@ export default {
 div.farm_news{
     width: 70%;
     display: inline-block;
+    box-sizing: border-box;
+    padding-right: 20px;
+
+    @media (max-width: 1024px) {
+        width: 85%;
+        display: block;
+        text-align: center;    
+        padding: 0;
+        margin: 0 auto;
+    }
     h2{
         font-size: 1.25rem;
     }
@@ -76,14 +87,22 @@ div.farm_news{
         overflow-y: scroll;
         -ms-overflow-style: none;
         margin: 20px 0px;
+        border-top: 2px dashed #d0d0d0;
+        border-bottom: 2px dashed #d0d0d0;
+        @media (max-width: 1024px) {
+            padding: 15px 0px;
+        }
+
         li{
             width: 100%;
             min-height: 80px;
-            margin: 5px 0px;
+            margin: 15px 0px;
             border:1px solid #d0d0d0;
             border-radius: 3px;
             padding: 10px 15px;
-                position: relative;
+            position: relative;
+            box-sizing: border-box;
+
 
             div.img{
                 overflow: hidden;
@@ -97,6 +116,7 @@ div.farm_news{
                 vertical-align: top;
                 padding-left: 20px;
                 display: inline-block;
+            
                 h2{
                     font-size: 1rem;
                     font-weight: bold;
@@ -108,10 +128,8 @@ div.farm_news{
                     line-height: 1.25rem;
                 }
                 span{
-                    position: absolute;
                     font-size: 0.75rem;
                     color: #666;
-                    bottom: 20px;
                 }
             }
         }

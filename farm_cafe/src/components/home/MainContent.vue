@@ -6,6 +6,7 @@
     </section>
     <section class='section2 wrap'>
         <FarmNews/>
+        <ProductAd/>
     </section>
     </div>
 </template>
@@ -13,9 +14,10 @@
 import MainContentInfo from './MainContentInfo'
 import AccControl from './AccControl'
 import FarmNews from './FarmNews'
+import ProductAd from './ProductAd'
 export default {
     components:{
-        MainContentInfo,AccControl,FarmNews
+        MainContentInfo,AccControl,FarmNews,ProductAd
     }
 }
 </script>
